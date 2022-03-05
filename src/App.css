@@ -1,38 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(61, 95, 88); */
+  background-image: url(https://www.cambridge.org/elt/blog/wp-content/uploads/2019/02/background-3268840_1920.jpg);
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-card{
+  color: #fff;
+  width: 500px;
+  height: 500px;
+  /* background-color: rgb(89, 184, 152); */
+  background-color: rgba(89, 184, 152, 0.85);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-card>h2{
+  font-size: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-card>h3{
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: start;
+}
+
+
+.weather-icon{
+  /* width: max-content; */
+  grid-column: 1/2;
+  justify-self: center;
+}
+
+.weather-ul{
+  list-style: none;
+  height: 100%;
+  grid-row: 1/3;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.weather-li{
+  margin-top: 10px;
+}
+
+.weather-description{
+  align-self: center;
+}
+
+.weather-temp{
+  font-size: 50px;
+  font-weight: 200;
+}
+
+.weather-card>button{
+  color: #fff;
+  background-color: rgb(61, 95, 88);
+  border: none;
+  width: 130px;
+  height: 50px;
+  border: #fff;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
 }
