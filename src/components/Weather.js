@@ -33,7 +33,7 @@ const Weather = () => {
                         <li className='weather-li'><i className="fa-solid fa-cloud"></i><b> Clouds:</b>{` ${res.clouds?.all} %`}</li>
                         <li className='weather-li'><i className="fa-solid fa-temperature-half"></i><b> Pressure:</b>{` ${res.main?.pressure} mb`}</li>
                     </ul>
-                    {degrees? <p className='weather-temp'>{`${(res.main?.temp -  273.15).toFixed(1)}  °C`}</p> : <p className='weather-temp'>{`${((res.main?.temp -  273.15)*(9/5)+32).toFixed(1)}  °F`}</p> }
+                    {degrees? <p className='weather-temp'>{`${(res.main?.temp -  273.15).toFixed(0)}  °C`}</p> : <p className='weather-temp'>{`${((res.main?.temp -  273.15)*(9/5)+32).toFixed(0)}  °F`}</p> }
                 </div>
                 <button onClick={()=>{setDegrees(!degrees)}}>{degrees?"degrees °F":"degrees °C"}</button>
             </div>
