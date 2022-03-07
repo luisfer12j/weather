@@ -19,7 +19,6 @@ const Weather = () => {
     },[])
 
     return (
-        <div>
             <div className='weather-card'>
                 <h2>Weather App</h2>
                 <h3>{`${res.name}, ${res.sys?.country}`}</h3>
@@ -36,7 +35,6 @@ const Weather = () => {
                 </div>
                 <button onClick={()=>{setDegrees(!degrees)}}>{degrees?"degrees °F":"degrees °C"}</button>
             </div>
-        </div>
     );
 };
 
