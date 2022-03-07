@@ -16,10 +16,8 @@ const Weather = () => {
     
     useEffect(()=>{
         navigator.geolocation.getCurrentPosition(succes);
-        console.log("renderizado!")
     },[])
 
-    console.log(res)
     return (
         <div>
             <div className='weather-card'>
@@ -34,6 +32,7 @@ const Weather = () => {
                         <li className='weather-li'><i className="fa-solid fa-temperature-half"></i><b> Pressure:</b>{` ${res.main?.pressure} mb`}</li>
                     </ul>
                     {degrees? <p className='weather-temp'>{`${(res.main?.temp -  273.15).toFixed(0)}  °C`}</p> : <p className='weather-temp'>{`${((res.main?.temp -  273.15)*(9/5)+32).toFixed(0)}  °F`}</p> }
+                    {degrees?<p>{`Feels like: ${(res.main?.feels_like -  273.15).toFixed(0)} °C`}</p> : <p>{`Feels like: ${((res.main?.feels_like -  273.15)*(9/5)+32).toFixed(0)}  °F`}</p> }
                 </div>
                 <button onClick={()=>{setDegrees(!degrees)}}>{degrees?"degrees °F":"degrees °C"}</button>
             </div>
